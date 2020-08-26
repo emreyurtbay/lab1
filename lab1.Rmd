@@ -143,6 +143,8 @@ College = College %>%
 
 _What is the above doing?_    Document the code here.
 
+The code above is creating a new variable called Elite, which sees if it is in the top 10 percent of rankings - this returns a TRUE or FALSE value. The second mutate actually recodes TRUE into "Yes" and FALSE into "No", so now the Elite variable only contains values that are the strings "Yes" or "No"
+
 Compare to the base `R` code:
 
 ```{r, evaluate=FALSE}
@@ -206,6 +208,11 @@ ggplot(College, aes(x = Elite, y = Outstate,
 ## Next Steps
 
 Update this document and explore the other variables thinking about the objective of predicting `Apps`.  Document what you discover thinking about models to predict `Apps`.
+
+```{r}
+par(mfrow = c(2,2))
+```
+
 
 ## Fit a linear model
 

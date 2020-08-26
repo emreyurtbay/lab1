@@ -210,9 +210,10 @@ ggplot(College, aes(x = Elite, y = Outstate,
 Update this document and explore the other variables thinking about the objective of predicting `Apps`.  Document what you discover thinking about models to predict `Apps`.
 
 ```{r}
-par(mfrow = c(2,2))
+plot(Apps~Accept, data = College)
 ```
 
+If we want to do linear modelling, we want to make sure that there exists a linear relationship between the predictor and response. It appears that there is indeed a linear relationship between acceptances and applications, which makes sense. We can likely use acceptances to predict 
 
 ## Fit a linear model
 
@@ -220,8 +221,8 @@ Use the `lm` function as described in class to fit a linear model with `Apps` as
 
 ```{r}
 # add lm code here
-# 
-# mymodel = lm(Apps ~ XXX, data=College)
+ mymodel = lm(Apps ~ Accept, data=College)
+summary(mymodel)
 ```
 
 
@@ -229,11 +230,12 @@ For the fitted model, produce diagnostic plots
 
 ```{r}
 # add diagnostic plots here
-# plot(mymodel)
+plot(mymodel)
 ```
 
 Discuss whether the model seems appropriate in terms of assumptions.
 
+The plots do not look appropriate - we do not see normal residuals, and the residuals do not show homoscedastic errors. I would choose a different model.
 
 ## Updating your work on GitHub
 
